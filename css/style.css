@@ -23,6 +23,8 @@ body {
   background: #080909;
   color: var(--text);
   font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
@@ -119,17 +121,27 @@ section, footer {
 .hero-content {
   position: absolute;
   inset: 0;
-  padding: 18vh 22px 13vh;
+  width: 100%;
+  max-width: 100%;
+  padding: 18vh 20px 13vh;
+  overflow: hidden;
 }
 
 .hero-title {
-  font: 900 clamp(60px, 18vw, 82px)/.82 "DM Sans", sans-serif;
-  letter-spacing: -.07em;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(52px, 17vw, 86px);
+  font-weight: 900;
+  line-height: .82;
+  letter-spacing: -.08em;
+
   color: var(--lime);
+  text-transform: uppercase;
+
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  width: max-content;
-  text-transform: uppercase;
+  align-items: flex-start;
 }
 
 .hero-title b {
