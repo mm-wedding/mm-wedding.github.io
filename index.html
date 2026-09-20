@@ -1,15 +1,214 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우리의 결혼식</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#111313">
+  <meta name="description" content="민석 & 명원의 결혼식에 초대합니다.">
+  <title>민석 & 명원| 우리의 결혼식</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700;900&family=Playfair+Display:wght@500;600&family=Yellowtail&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <main>
 
-    <h1>우리의 결혼식</h1>
+    <!-- HERO -->
+    <section class="hero section-blue">
+      <div class="hero-bg photo-placeholder" data-photo="hero.jpg"></div>
+      <div class="hero-overlay"></div>
 
-    <script src="js/main.js"></script>
+      <header class="topbar">
+        <span>OUR WEDDING</span>
+        <button class="menu-button" aria-label="메뉴 열기"><i></i><i></i><i></i></button>
+      </header>
+
+      <div class="hero-content">
+        <div class="hero-title">
+          <span>MINSEOK</span>
+          <b>&amp;</b>
+          <span>MYEONGWON</span>
+        </div>
+
+        <div class="hero-subtitle">
+          TOGETHER<br>FOR A LIFETIME
+        </div>
+
+        <div class="hero-date">
+          <strong>2027.12.20</strong>
+          <span>SUN&nbsp;&nbsp;PM 2:50</span>
+          <span>루이비스웨딩홀 중구점</span>
+        </div>
+      </div>
+
+      <div class="scroll-cue">
+        <span></span>
+        SCROLL
+      </div>
+    </section>
+
+    <!-- INVITATION -->
+    <section class="invitation section-cream reveal">
+      <div class="section-label">INVITATION <em></em></div>
+
+      <div class="invitation-grid">
+        <div class="invitation-copy">
+          <h2>저희 두 사람이<br>사랑의 결실을 맺어<br>새로운 시작을 하려 합니다.</h2>
+          <p>
+            함께해 주시는 모든 분들과<br>
+            저희의 첫걸음을 축복해 주시면<br>
+            더없는 기쁨이 될 것 같습니다.
+          </p>
+          <div class="signature">Minseok &amp; Myeongwon</div>
+        </div>
+
+        <div class="portrait-frame photo-placeholder" data-photo="invitation.jpg">
+          <div class="frame-caption">OUR<br>WEDDING<br>DAY</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown section-blue reveal">
+      <div class="countdown-bg photo-placeholder" data-photo="countdown.jpg"></div>
+      <div class="countdown-overlay"></div>
+
+      <div class="countdown-content">
+        <div class="section-label light">D-DAY <em></em></div>
+        <p>우리의 특별한 날까지</p>
+        <div class="dday" id="dday">D-</div>
+        <div class="date-line">2027.12.20 SUN PM 2:50</div>
+        <div class="venue-line">루이비스웨딩홀 중구점</div>
+      </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="story section-dark reveal">
+      <div class="section-label light">OUR STORY <em></em></div>
+      <div class="story-grid">
+        <div>
+          <h2>처음 만난 그 순간부터<br>지금까지, 그리고 앞으로</h2>
+          <p>서로의 일상이 되어준 우리,<br>이제는 평생 함께하고 싶습니다.</p>
+          <a class="outline-button" href="#gallery">우리의 이야기 보기 <span>→</span></a>
+        </div>
+
+        <div class="polaroids">
+          <div class="polaroid p1 photo-placeholder" data-photo="story-1.jpg"></div>
+          <div class="polaroid p2 photo-placeholder" data-photo="story-2.jpg"></div>
+          <div class="story-script">Together ♡</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery section-cream reveal" id="gallery">
+      <div class="gallery-head">
+        <div>
+          <div class="section-label">GALLERY <em></em></div>
+          <h2>소중한 순간들을<br>함께 나누고 싶어요.</h2>
+        </div>
+        <button class="text-button" id="openGallery">사진 더보기 →</button>
+      </div>
+
+      <div class="gallery-grid">
+        <button class="gallery-item photo-placeholder" data-photo="gallery-1.jpg" data-index="0" aria-label="사진 1"></button>
+        <button class="gallery-item photo-placeholder" data-photo="gallery-2.jpg" data-index="1" aria-label="사진 2"></button>
+        <button class="gallery-item photo-placeholder" data-photo="gallery-3.jpg" data-index="2" aria-label="사진 3"></button>
+        <button class="gallery-item photo-placeholder" data-photo="gallery-4.jpg" data-index="3" aria-label="사진 4"></button>
+        <button class="gallery-item photo-placeholder" data-photo="gallery-5.jpg" data-index="4" aria-label="사진 5"></button>
+        <button class="gallery-item photo-placeholder" data-photo="gallery-6.jpg" data-index="5" aria-label="사진 6"></button>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location reveal">
+      <div class="location-photo photo-placeholder" data-photo="venue.jpg"></div>
+      <div class="location-content">
+        <div class="section-label light">WEDDING INFO <em></em></div>
+        <h2>결혼식 안내</h2>
+
+        <div class="info-row"><span class="icon">▣</span><p><b>2027년 12월 20일 (일) 오후 2시 50분</b></p></div>
+        <div class="info-row"><span class="icon">●</span><p><b>루이비스웨딩홀 중구점</b><br>서울특별시 중구 청파로 463 한국경제신문사</p></div>
+
+        <a class="outline-button light-button" href="#map">오시는 길 보기 <span>→</span></a>
+      </div>
+    </section>
+
+    <!-- MAP / TRANSPORT -->
+    <section class="map-section section-dark reveal" id="map">
+      <div class="map-placeholder">
+        <div class="map-pin">●</div>
+        <span>MAP</span>
+        <small>카카오맵 / 네이버지도 연결 영역</small>
+      </div>
+      <div class="transport">
+        <h3>교통 안내</h3>
+        <div class="transport-row"><span>🚗</span><p><b>자가용</b><br>강남역 3번 출구에서 약 10분</p></div>
+        <div class="transport-row"><span>🚌</span><p><b>버스</b><br>간선 145, 421, 440<br>지선 3412, 3422</p></div>
+        <div class="transport-row"><span>🚇</span><p><b>지하철</b><br>3호선 신사역 4번 출구 도보 5분</p></div>
+      </div>
+    </section>
+
+    <!-- ACCOUNT / RSVP -->
+    <section class="account section-cream reveal">
+      <div class="account-card">
+        <div class="section-label">ACCOUNT <em></em></div>
+        <h2>마음 전하실 곳</h2>
+        <p>축하해 주시는 마음에 감사드리며,<br>보내주시는 따뜻한 마음을<br>저희에게 큰 힘이 됩니다.</p>
+      </div>
+
+      <div class="account-card account-number">
+        <p><b>신한은행</b> 110-123-456789</p>
+        <p>이민석 · 이명원</p>
+        <button class="outline-button" id="copyAccount">계좌번호 복사</button>
+      </div>
+
+      <div class="account-card">
+        <div class="section-label">RSVP <em></em></div>
+        <h2>참석 여부를 알려주세요.</h2>
+        <p>바쁘시더라도 참석 여부를<br>꼭 알려주시면 감사하겠습니다.</p>
+        <button class="outline-button" id="rsvpButton">참석하기 →</button>
+      </div>
+    </section>
+
+    <!-- QR -->
+    <section class="qr-section section-dark reveal">
+      <div>
+        <div class="qr-script">We're<br>getting<br>Married ♡</div>
+        <p>청첩장 공유하기</p>
+      </div>
+      <div class="qr-wrap">
+        <div id="qrcode"></div>
+        <small>QR로 접속하기</small>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer section-dark">
+      <div class="footer-script">Thank<br>you ♡</div>
+      <div>
+        <p>저희의 시작에 함께해 주셔서 감사합니다.</p>
+        <strong>MINSEOK &amp; MYEONGWON</strong>
+        <small>2027.05.15 SAT PM 2:00</small>
+      </div>
+      <button class="top-button" id="topButton" aria-label="맨 위로">↑</button>
+    </footer>
+
+  </main>
+
+  <!-- Gallery modal -->
+  <div class="modal" id="galleryModal" aria-hidden="true">
+    <button class="modal-close" id="modalClose" aria-label="닫기">×</button>
+    <button class="modal-prev" id="modalPrev" aria-label="이전">‹</button>
+    <div class="modal-image photo-placeholder" id="modalImage"></div>
+    <button class="modal-next" id="modalNext" aria-label="다음">›</button>
+    <div class="modal-counter" id="modalCounter">1 / 6</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
