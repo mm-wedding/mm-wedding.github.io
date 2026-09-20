@@ -155,27 +155,33 @@ modal.addEventListener("touchend", e => {
   else showGallery(currentIndex + 1);
 }, { passive: true });
 
-// -------------------------------
+// =========================================
 // Account copy
-// -------------------------------
-document.getElementById("copyAccount").addEventListener("click", async () => {
-  const account = "신한은행 110-123-456789";
-
-  try {
-    await navigator.clipboard.writeText(account);
-    alert("계좌번호가 복사되었습니다.");
-  } catch {
-    alert(account);
-  }
+// =========================================
+document.querySelectorAll(".copy-account").forEach(button => {
+    button.addEventListener("click", async () => {
+        const account = button.dataset.account;
+        try {
+            await navigator.clipboard.writeText(account);
+            const originalText = button.textContent;
+            button.textContent = "완료";
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 1200);
+        } catch (error) {
+            alert("계좌번호: " + account);
+        }
+    });
 });
 
-// -------------------------------
-// RSVP
-// -------------------------------
-document.getElementById("rsvpButton").addEventListener("click", () => {
-  // TODO: 실제 RSVP 폼 URL로 변경하세요.
-  // 예: Google Forms / 네이버 폼 / 직접 만든 API
-  alert("참석 여부 폼을 연결할 예정입니다.");
+// =========================================
+// Account accordion
+// =========================================
+document.querySelectorAll(".account-group-title").forEach(button => {
+    button.addEventListener("click", () => {
+        const group = button.closest(".account-group");
+        group.classList.toggle("open");
+    });
 });
 
 // -------------------------------
@@ -205,3 +211,42 @@ function makeQRCode() {
 }
 
 makeQRCode();
+
+// =========================================
+// Share
+// =========================================
+
+const shareButton = document.getElementById("shareButton");
+
+if (shareButton) {
+    shareButton.addEventListener("click", async () => {
+
+        const shareData = {
+            title: "MINSEOK & MYEONGWON",
+            text: "저희의 결혼식에 초대합니다.",
+            url: window.location.href
+        };
+
+        // 모바일 공유 기능 지원
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (error) {
+                // 사용자가 공유창을 닫은 경우
+                if (error.name !== "AbortError") {
+                    console.error(error);
+                }
+            }
+        } else {
+            // 공유 기능이 없는 브라우저
+            try {
+                await navigator.clipboard.writeText(
+                    window.location.href
+                );
+                alert("청첩장 링크가 복사되었습니다.");
+            } catch (error) {
+                alert(window.location.href);
+            }
+        }
+    });
+}
