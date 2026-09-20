@@ -12,17 +12,17 @@ const QR_URL = window.location.href.split("#")[0];
 // Put your real images in /images/ using these names.
 const imageFiles = {
   "hero.jpg": "images/hero.jpg",
-  "invitation.jpg": "images/invitation.jpg",
-  "countdown.jpg": "images/countdown.jpg",
-  "story-1.jpg": "images/story-1.jpg",
-  "story-2.jpg": "images/story-2.jpg",
-  "gallery-1.jpg": "images/gallery-1.jpg",
-  "gallery-2.jpg": "images/gallery-2.jpg",
-  "gallery-3.jpg": "images/gallery-3.jpg",
-  "gallery-4.jpg": "images/gallery-4.jpg",
-  "gallery-5.jpg": "images/gallery-5.jpg",
-  "gallery-6.jpg": "images/gallery-6.jpg",
-  "venue.jpg": "images/venue.jpg"
+  //"invitation.jpg": "images/invitation.jpg",
+  //"countdown.jpg": "images/countdown.jpg",
+  //"story-1.jpg": "images/story-1.jpg",
+  //"story-2.jpg": "images/story-2.jpg",
+  //"gallery-1.jpg": "images/gallery-1.jpg",
+  //"gallery-2.jpg": "images/gallery-2.jpg",
+  //"gallery-3.jpg": "images/gallery-3.jpg",
+  //"gallery-4.jpg": "images/gallery-4.jpg",
+  //"gallery-5.jpg": "images/gallery-5.jpg",
+  //"gallery-6.jpg": "images/gallery-6.jpg",
+  //"venue.jpg": "images/venue.jpg"
 };
 
 // -------------------------------
