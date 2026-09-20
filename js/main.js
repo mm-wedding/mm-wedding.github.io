@@ -1,7 +1,7 @@
 // ================================
 // Wedding invitation configuration
 // ================================
-const WEDDING_DATE = new Date("2027-05-15T14:00:00+09:00");
+const WEDDING_DATE = new Date("2026-12-20T14:50:00+09:00");
 
 // QR destination:
 // Leave as window.location.href while developing.
