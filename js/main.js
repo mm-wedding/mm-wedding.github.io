@@ -250,3 +250,65 @@ if (shareButton) {
         }
     });
 }
+
+const mapContainer = document.getElementById("kakaoMap");
+
+if (mapContainer && window.kakao?.maps) {
+    const mapLockButton = document.getElementById("mapLockButton");
+    const weddingPosition = new kakao.maps.LatLng(37.5606, 126.9676);
+    const map = new kakao.maps.Map(mapContainer, {
+        center: weddingPosition,
+        level: 4
+    });
+
+    // 카카오맵 기본 마커를 예식장 위치(지도의 중심)에 표시합니다.
+    const marker = new kakao.maps.Marker({
+        position: weddingPosition,
+        map
+    });
+
+    map.setCenter(marker.getPosition());
+    map.setDraggable(false);
+    map.setZoomable(false);
+
+    const overlayContent = document.createElement("div");
+    overlayContent.className = "wedding-map-overlay";
+    overlayContent.innerHTML = `
+        <div class="wedding-info">
+            <div class="wedding-info-title">루이비스웨딩홀 중구점</div>
+            <button class="wedding-info-close" type="button" aria-label="장소 정보 닫기">×</button>
+            <div class="wedding-info-body">
+                <div class="wedding-info-address">서울 중구 청파로 463 18층</div>
+                <div class="wedding-info-sub">(지번) 서울 중구 중림동 441 18층</div>
+            </div>
+        </div>
+    `;
+
+    const infoOverlay = new kakao.maps.CustomOverlay({
+        position: weddingPosition,
+        content: overlayContent,
+        yAnchor: 1,
+        zIndex: 20
+    });
+
+    infoOverlay.setMap(map);
+
+    const openInfoOverlay = () => infoOverlay.setMap(map);
+    const closeInfoOverlay = () => infoOverlay.setMap(null);
+
+    kakao.maps.event.addListener(marker, "click", openInfoOverlay);
+
+    overlayContent.querySelector(".wedding-info-close").addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        closeInfoOverlay();
+    });
+
+    if (mapLockButton) {
+        mapLockButton.addEventListener("click", () => {
+            map.setDraggable(true);
+            map.setZoomable(true);
+            mapLockButton.remove();
+        });
+    }
+}

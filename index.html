@@ -143,9 +143,19 @@
     <!-- MAP / TRANSPORT -->
     <section class="map-section section-dark reveal" id="map">
       <div class="map-placeholder">
-        <div class="map-pin">●</div>
-        <span>MAP</span>
-        <small>카카오맵 / 네이버지도 연결 영역</small>
+        <div id="kakaoMap" aria-label="예식장 위치 지도"></div>
+        <button
+          class="map-lock-button"
+          id="mapLockButton"
+          type="button"
+          aria-label="지도를 움직이려면 잠금을 해제하세요"
+          title="지도 잠금 해제"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="5.5" y="10" width="13" height="10" rx="1.5"></rect>
+            <path d="M8.5 10V7a3.5 3.5 0 0 1 7 0v3"></path>
+          </svg>
+        </button>
       </div>
       <div class="transport">
         <h3>교통 안내</h3>
@@ -244,9 +254,9 @@
                         <span>이형찬</span>
                     </div>
                     <div class="account-number">
-                        국민은행 123-456-789012
+                        농협 815812-52-092719
                     </div>
-                    <button class="copy-account" data-account="123-456-789012">
+                    <button class="copy-account" data-account="81581252092719">
                         복사
                     </button>
                 </div>
@@ -257,9 +267,9 @@
                         <span>차명희</span>
                     </div>
                     <div class="account-number">
-                        우리은행 123-456-789012
+                        농협 815812-56-066538
                     </div>
-                    <button class="copy-account" data-account="123-456-789012">
+                    <button class="copy-account" data-account="81581256066538">
                         복사
                     </button>
                 </div>
@@ -307,6 +317,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=f5524f70c418d9c2cd37fe0082f67a9a"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

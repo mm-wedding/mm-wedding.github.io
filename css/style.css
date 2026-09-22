@@ -789,6 +789,7 @@ section, footer {
 }
 
 .map-placeholder {
+  position: relative;
   min-height: 280px;
   background:
     linear-gradient(rgba(240,236,222,.85), rgba(225,220,205,.85)),
@@ -1195,4 +1196,282 @@ section, footer {
 
 .share-button:active {
     transform: scale(.98);
+}
+
+
+#kakaoMap {
+    width: 100%;
+    height: 500px;
+    /* margin-top: 25px; */
+    overflow: hidden;
+    background: #eee;
+}
+
+.map-lock-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #111;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+}
+
+.map-lock-button svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    vertical-align: middle;
+}
+
+.map-lock-button:hover,
+.map-lock-button:focus-visible {
+    background: #333;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* 지도 위 파란색 마커 */
+.wedding-marker {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #2589e8;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+
+    position: relative;
+}
+
+/* 마커 아래쪽 삼각형 */
+.wedding-marker::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 14px solid #2589e8;
+}
+
+/* 정보창 */
+.wedding-info {
+    position: relative;
+    width: 280px;
+    background: #fff;
+    border-radius: 4px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+
+    overflow: hidden;
+}
+
+/* 정보창 제목 */
+.wedding-info-title {
+    height: 54px;
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 19px;
+    font-weight: 700;
+    color: #222;
+
+    border-bottom: 1px solid #ddd;
+}
+
+/* 닫기 버튼 */
+.wedding-info-close {
+    position: absolute;
+    top: 11px;
+    right: 14px;
+
+    width: 28px;
+    height: 28px;
+
+    border: 0;
+    background: transparent;
+
+    font-size: 28px;
+    font-weight: 200;
+    line-height: 28px;
+
+    color: #555;
+    cursor: pointer;
+}
+
+/* 주소 영역 */
+.wedding-info-body {
+    padding: 17px 18px 18px;
+}
+
+.wedding-info-address {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #222;
+}
+
+.wedding-info-sub {
+    margin-top: 5px;
+
+    font-size: 13px;
+    line-height: 1.4;
+    color: #999;
+}
+
+/* 정보창 아래 말풍선 꼬리 */
+.wedding-info::after {
+    content: "";
+
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fff;
+}
+
+.wedding-info {
+    width: min(280px, calc(100vw - 100px));
+}
+
+.wedding-map-overlay {
+    position: relative;
+    width: 280px;
+    height: 175px;
+}
+
+/* 정보창 */
+.wedding-info {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 280px;
+
+    background: #fff;
+    border-radius: 5px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+
+    overflow: visible;
+}
+
+/* 제목 */
+.wedding-info-title {
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 18px;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* 주소 */
+.wedding-info-body {
+    padding: 13px 18px 17px;
+    border-top: 1px solid #ddd;
+}
+
+.wedding-info-address {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.wedding-info-sub {
+    margin-top: 4px;
+
+    color: #999;
+    font-size: 13px;
+}
+
+/* X */
+.wedding-info-close {
+    position: absolute;
+
+    top: 8px;
+    right: 10px;
+
+    border: 0;
+    background: none;
+
+    font-size: 32px;
+    font-weight: 200;
+
+    color: #555;
+}
+
+/* 정보창 꼬리 */
+.wedding-info::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -12px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 12px solid #fff;
+}
+
+/* 마커 */
+.wedding-marker {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #2589e8;
+    border: 3px solid #fff;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 21px;
 }
