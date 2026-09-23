@@ -702,31 +702,61 @@ section, footer {
   background: transparent;
   color: #333;
   white-space: nowrap;
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 7px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
   margin-top: 25px;
 }
 
 .gallery-item {
-  min-height: 145px;
+  aspect-ratio: 1;
+  min-height: 0;
   border: 0;
   border-radius: 8px;
   overflow: hidden;
   transition: transform .25s ease;
 }
 
-.gallery-item:nth-child(2),
-.gallery-item:nth-child(5) {
-  transform: translateY(20px);
-}
-
 .gallery-item:active {
   transform: scale(.97);
+}
+
+/* Show a compact 3 × 3 preview; all images remain available in the modal. */
+.gallery-item:nth-child(n + 10) {
+  display: none;
+}
+
+.gallery-grid.is-expanded .gallery-item:nth-child(n + 10) {
+  display: block;
+}
+
+.gallery-expand-button {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 24px;
+  border: 1px solid #b5c51e;
+  border-radius: 24px;
+  background: transparent;
+  color: #333;
+  font: 600 14px "Noto Sans KR", sans-serif;
+}
+
+.gallery-expand-button span {
+  margin-left: 8px;
+  color: #93a900;
+}
+
+.gallery-expand-button:active {
+  transform: scale(.98);
+}
+
+.gallery-expand-button[hidden] {
+  display: none;
 }
 
 /* LOCATION */
@@ -800,6 +830,13 @@ section, footer {
   justify-content: center;
   align-items: center;
   gap: 7px;
+}
+
+/* Give the map a little breathing room inside its dark section. */
+#map .map-placeholder {
+  margin: 18px 22px 0;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .map-placeholder .map-pin {
@@ -1082,6 +1119,10 @@ section, footer {
   width: min(88vw, 520px);
   height: min(72vh, 650px);
   border-radius: 5px;
+  background-color: #000;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .modal-close,
@@ -1304,7 +1345,7 @@ section, footer {
 
 #kakaoMap {
     width: 100%;
-    height: 500px;
+    height: 400px;
     /* margin-top: 25px; */
     overflow: hidden;
     background: #eee;

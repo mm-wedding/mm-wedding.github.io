@@ -90,19 +90,14 @@ let currentIndex = 0;
 function showGallery(index) {
   currentIndex = (index + galleryItems.length) % galleryItems.length;
 
-  const name = galleryItems[currentIndex].dataset.photo;
-  const path = imageFiles[name];
+  const backgroundImage = galleryItems[currentIndex].style.backgroundImage;
 
   modalImage.classList.remove("has-image");
   modalImage.style.removeProperty("--photo");
+  modalImage.style.removeProperty("background-image");
 
-  if (path) {
-    const img = new Image();
-    img.onload = () => {
-      modalImage.style.setProperty("--photo", `url("${path}")`);
-      modalImage.classList.add("has-image");
-    };
-    img.src = path;
+  if (backgroundImage) {
+    modalImage.style.backgroundImage = backgroundImage;
   }
 
   modalCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
@@ -126,6 +121,14 @@ galleryItems.forEach((item, index) => {
 });
 
 document.getElementById("openGallery").addEventListener("click", () => openModal(0));
+const expandGalleryButton = document.getElementById("expandGallery");
+const galleryGrid = document.querySelector(".gallery-grid");
+
+expandGalleryButton?.addEventListener("click", () => {
+  galleryGrid?.classList.add("is-expanded");
+  expandGalleryButton.hidden = true;
+});
+
 document.getElementById("modalClose").addEventListener("click", closeModal);
 document.getElementById("modalPrev").addEventListener("click", () => showGallery(currentIndex - 1));
 document.getElementById("modalNext").addEventListener("click", () => showGallery(currentIndex + 1));
