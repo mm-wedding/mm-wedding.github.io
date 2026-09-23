@@ -1117,6 +1117,109 @@ section, footer {
   font: 11px "DM Sans", sans-serif;
 }
 
+/* MOBILE TYPE: keep the hero as designed, make the content easier to read */
+@media (max-width: 560px) {
+  .section-label {
+    font-size: 12px;
+  }
+
+  .invitation-copy h2 {
+    font-size: 27px;
+    line-height: 1.5;
+  }
+
+  .invitation-copy p,
+  .story p {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .countdown-content p,
+  .date-line {
+    font-size: 16px;
+  }
+
+  .venue-line {
+    font-size: 14px;
+  }
+
+  .gallery h2 {
+    font-size: 27px;
+  }
+
+  .text-button,
+  .outline-button {
+    font-size: 13px;
+  }
+
+  .info-row {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .transport h3 {
+    font-size: 16px;
+  }
+
+  .transport-row {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .account-intro h2 {
+    font-size: 29px;
+  }
+
+  .account-intro p {
+    font-size: 14px;
+  }
+
+  .account-group-title {
+    font-size: 16px;
+  }
+
+  .account-item {
+    grid-template-columns: 74px 1fr auto;
+  }
+
+  .account-person strong {
+    font-size: 14px;
+  }
+
+  .account-person span,
+  .copy-account {
+    font-size: 12px;
+  }
+
+  .account-number {
+    font-size: 14px;
+  }
+
+  .qr-section p {
+    font-size: 13px;
+  }
+
+  .qr-wrap small {
+    font-size: 11px;
+  }
+
+  .share-button {
+    font-size: 14px;
+  }
+
+  .footer p {
+    font-size: 12px;
+  }
+
+  .footer strong {
+    font-size: 12px;
+  }
+
+  .footer small {
+    font-size: 11px;
+  }
+}
+
 /* DESKTOP: still keep mobile composition centered */
 @media (min-width: 561px) {
   body {
