@@ -761,7 +761,7 @@ section, footer {
 
 /* LOCATION */
 .location {
-  min-height: 590px;
+  min-height: 350px;
   color: white;
   overflow: hidden;
   background: var(--blue-dark);
@@ -783,7 +783,7 @@ section, footer {
 .location-content {
   position: relative;
   z-index: 1;
-  min-height: 590px;
+  min-height: 350px;
   padding: 42px 22px;
   display: flex;
   flex-direction: column;
