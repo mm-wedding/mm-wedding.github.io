@@ -311,6 +311,7 @@ if (mapContainer && window.kakao?.maps) {
         mapLockButton.addEventListener("click", () => {
             map.setDraggable(true);
             map.setZoomable(true);
+            mapContainer.closest(".map-placeholder")?.classList.add("map-unlocked");
             mapLockButton.remove();
         });
     }

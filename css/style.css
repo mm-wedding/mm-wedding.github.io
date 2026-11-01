@@ -839,6 +839,15 @@ section, footer {
   overflow: hidden;
 }
 
+/* Let page scrolling pass through the map while it is locked. */
+#kakaoMap {
+  touch-action: pan-y;
+}
+
+#map .map-placeholder.map-unlocked #kakaoMap {
+  touch-action: none;
+}
+
 .map-placeholder .map-pin {
   font-size: 36px;
   color: #555;
