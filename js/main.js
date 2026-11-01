@@ -316,3 +316,29 @@ if (mapContainer && window.kakao?.maps) {
         });
     }
 }
+
+// Open installed map apps directly, with a web map fallback when unavailable.
+document.querySelectorAll(".map-app-link[data-fallback]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+        if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            event.preventDefault();
+            window.location.href = link.dataset.fallback;
+            return;
+        }
+
+        event.preventDefault();
+        let appOpened = false;
+        const markAppOpened = () => {
+            appOpened = true;
+            window.clearTimeout(fallbackTimer);
+        };
+        const fallbackTimer = window.setTimeout(() => {
+            if (!appOpened && !document.hidden) window.location.href = link.dataset.fallback;
+        }, 1400);
+
+        document.addEventListener("visibilitychange", () => {
+            if (document.hidden) markAppOpened();
+        }, { once: true });
+        window.location.href = link.href;
+    });
+});
